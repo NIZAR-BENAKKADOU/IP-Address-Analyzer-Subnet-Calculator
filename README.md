@@ -1,29 +1,57 @@
-# 🌐 IP Address Analyzer & Subnet Calculator
+# IP Address Analyzer & Subnet Calculator
 
-A command-line C++ tool that analyzes IPv4 addresses and performs subnet calculations.
+A command-line tool built in C++ that performs IPv4 address analysis, classful network calculations, and custom subnetting.
 
 ## Features
 
-- **IP Address Analysis** — Determines the class (A–E) and displays the default subnet mask with CIDR notation.
-- **Network Calculations** — Computes the network address, broadcast address, first/last usable host, and total usable host count using the default class mask.
-- **Subnetting** — Given a required number of hosts, calculates the optimal subnet mask, new network/broadcast addresses, and valid host range.
-- **Input Validation** — Validates IPv4 input and ensures host requirements don't exceed class limits.
+- **IP Classification** — Identifies the network class (A–E) and default subnet mask
+- **Network Calculations** — Computes network address, broadcast address, valid host range, and total usable hosts
+- **Custom Subnetting** — Calculates the optimal subnet mask for a given number of required hosts
+- **Input Validation** — Rejects malformed addresses and out-of-range values
 
-## How to Compile & Run
+## Project Structure
 
-### Compile
+```
+IP-Address-Analyzer-Subnet-Calculator/
+├── main.cpp          # Entry point and program flow
+├── ip_utils.h/.cpp   # IP parsing, conversion, and classification
+├── subnet.h/.cpp     # Subnet mask, CIDR, and network calculations
+├── display.h/.cpp    # Table formatting and output helpers
+├── Makefile          # Build automation
+└── README.md
+```
 
+## Getting Started
+
+### Prerequisites
+
+- **g++** with C++17 support
+
+### Build
+
+Using Make:
 ```bash
-g++ -o network network.cpp
+make
+```
+
+Or manually:
+```bash
+g++ -std=c++17 -o network.exe main.cpp ip_utils.cpp subnet.cpp display.cpp
 ```
 
 ### Run
 
 ```bash
-./network
+./network.exe
 ```
 
-## Example Usage
+### Clean
+
+```bash
+make clean
+```
+
+## Example Output
 
 ```
   =========================================
@@ -47,7 +75,7 @@ g++ -o network network.cpp
   | Broadcast Address   : 192.168.1.255     |
   | First Host          : 192.168.1.1       |
   | Last Host           : 192.168.1.254     |
-  | Total Usable Hosts  : 253               |
+  | Total Usable Hosts  : 254               |
   +-----------------------------------------+
 
   Enter the required number of hosts: 50
@@ -65,17 +93,16 @@ g++ -o network network.cpp
   +-----------------------------------------+
 ```
 
-## Project Structure
+## Technologies
 
-```
-network/
-└── network.cpp    # Main source file (single-file program)
-```
-
-## Requirements
-
-- A C++ compiler with C++11 support or later (e.g. `g++`, `clang++`, or MSVC)
+- **Language:** C++17
+- **Libraries:** Standard Library only (`iostream`, `sstream`, `cstdint`, `iomanip`)
+- **Build:** GNU Make / g++
 
 ## Author
 
-Nizar
+**NIZAR BENAKKADOU** — [GitHub](https://github.com/NIZAR-BENAKKADOU)
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
