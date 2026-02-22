@@ -12,23 +12,43 @@ A command-line tool built in C++ that performs IPv4 address analysis, classful n
 ## Project Structure
 
 ```
-├── main.cpp          Entry point and program flow
-├── ip_utils.h/.cpp   IP parsing, conversion, and classification
-├── subnet.h/.cpp     Subnet mask, CIDR, and network calculations
-├── display.h/.cpp    Table formatting and output helpers
+IP-Address-Analyzer-Subnet-Calculator/
+├── main.cpp          # Entry point and program flow
+├── ip_utils.h/.cpp   # IP parsing, conversion, and classification
+├── subnet.h/.cpp     # Subnet mask, CIDR, and network calculations
+├── display.h/.cpp    # Table formatting and output helpers
+├── Makefile          # Build automation
 └── README.md
 ```
 
-## Build & Run
+## Getting Started
 
-**Compile:**
+### Prerequisites
+
+- **g++** with C++17 support
+
+### Build
+
+Using Make:
+```bash
+make
+```
+
+Or manually:
 ```bash
 g++ -std=c++17 -o network.exe main.cpp ip_utils.cpp subnet.cpp display.cpp
 ```
 
-**Run:**
+### Run
+
 ```bash
 ./network.exe
+```
+
+### Clean
+
+```bash
+make clean
 ```
 
 ## Example Output
@@ -76,11 +96,12 @@ g++ -std=c++17 -o network.exe main.cpp ip_utils.cpp subnet.cpp display.cpp
 ## Technologies
 
 - **Language:** C++17
-- **Libraries:** Standard Library only (`<iostream>`, `<sstream>`, `<cstdint>`, `<iomanip>`)
+- **Libraries:** Standard Library only (`iostream`, `sstream`, `cstdint`, `iomanip`)
+- **Build:** GNU Make / g++
 
 ## Author
 
-**NIZAR BENAKKADOU**
+**NIZAR BENAKKADOU** — [GitHub](https://github.com/NIZAR-BENAKKADOU)
 
 ## License
 
